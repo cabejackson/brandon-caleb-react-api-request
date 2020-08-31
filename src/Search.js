@@ -13,7 +13,7 @@ class Search extends React.Component {
                 <SearchFilter onSubmit={this.props.onSubmit}/>
                 <div className="PrintBookFilters">
                     <PrintTypeFilter />
-                    <BookTypeFilter bookTypeFilter= this.bookTypeFilter/>
+                    <BookTypeFilter bookTypeFilter={this.bookTypeFilter}/>
                 </div>
             </section>
         ) 

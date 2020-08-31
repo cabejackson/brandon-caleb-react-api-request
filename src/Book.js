@@ -4,21 +4,31 @@ import SearchTermFilter from './PrintTypeFilter';
 class Book extends React.Component {
 
     render () {
-        let Title = "title"
-        let Author = "name";
-        let Price = 0;
-        let Description = "words";
+
+        let price = 0
+
+        try {
+            if(typeof this.props.book.saleInfo.retailPrice.amount === 'number') 
+                price = this.props.book.saleInfo.retailPrice.amount
+        } 
+        catch(err) {
+            price = 0
+        }
 
 
+        let imgLink = this.props.book.volumeInfo.imageLinks.thumbnail
+        let title = this.props.book.volumeInfo.title
+
+        console.log('this is book', this.props)
         return (
             <section>
-                <h3 className="title">{Title}</h3>
+                <h3 className="title">{title}</h3>
                 <div className="book">
-                    <img src="" alt="" className="bookCover"/>
+                    <img src={imgLink} alt={title} className="bookCover"/>
                     <div className="bookInfo">
-                        <p>{Author}</p>
-                        <p>{Price}</p>
-                        <p>{Description}</p>
+                        <p>{this.props.book.volumeInfo.authors}</p>
+                        <p>{price}</p>
+                        <p>{this.props.book.volumeInfo.description}</p>
                     </div>
                 </div>   
             </section>

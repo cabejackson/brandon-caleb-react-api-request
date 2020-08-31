@@ -12,10 +12,9 @@ class App extends React.Component {
 
 
  state = {
-  searchInput: '',
   printFilter: '',
   bookFilter: '',
-  searchResults: [],
+  books: [],
 }
 
 onSubmit = (e) => {
@@ -23,36 +22,27 @@ onSubmit = (e) => {
   fetch(baseURL + input + apiKey) 
   .then(response => response.json())
   .then(data => {
-    const books = data.items;
-    console.log(books, 'those are books')
+    const results = data.items;
+    //console.log(books, 'those are books')
     this.setState({
-      searchResults: books
+      books: results
     })
-    //console.log('hiii', this.state.searchResults)
   })
-
-  
-  //console.log('the input is here', input)
-  // this.setState({
-  //   searchInput: input   
-  // })
-  //console.log('onsubmit', this.state.searchInput)
-
 }
- 
 
-//https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=AIzaSyDJLlWlrwB4UEP-nM2SP0lv3WF7Izh9Gkw
-
-
-  
+bookTypeFilter = (filter) => {
+  this.setState({
+    bookFilter: filter
+  })
+}
+   
   render(){
-    //console.log('app is HERE');
-
+    console.log(this.state.books)
     return (
       <div className="App">
         <header className="App-header">Google Book Search</header>
-        <Search onSubmit={this.onSubmit}/>
-        <BookList />
+        <Search onSubmit={this.onSubmit} bookTypeFilter={this.bookTypeFilter}/>
+        <BookList books={this.state.books}/>
       </div>
     );
   }
