@@ -7,12 +7,13 @@ import BookTypeFilter from './BookTypeFilter';
 class Search extends React.Component {
 
     render () {
+        console.log(this.props,'search is HERE');
         return (
             <section className="Filters">
-                <SearchFilter />
+                <SearchFilter onSubmit={this.props.onSubmit}/>
                 <div className="PrintBookFilters">
                     <PrintTypeFilter />
-                    <BookTypeFilter />
+                    <BookTypeFilter bookTypeFilter= this.bookTypeFilter/>
                 </div>
             </section>
         ) 
