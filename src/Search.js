@@ -8,10 +8,12 @@ class Search extends React.Component {
 
     render () {
         return (
-            <section>
+            <section className="Filters">
                 <SearchFilter />
-                <PrintTypeFilter />
-                <BookTypeFilter />    
+                <div className="PrintBookFilters">
+                    <PrintTypeFilter />
+                    <BookTypeFilter />
+                </div>
             </section>
         ) 
     }

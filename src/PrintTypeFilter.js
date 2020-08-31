@@ -4,11 +4,10 @@ class PrintTypeFilter extends React.Component {
   render() {
     return (
         <section>
-          <label for="printTypeFilter"></label>
-          <input type="text" id="printTypeFilter" />
-
-          <select type="" className="Search">
-            {"Click Here"}
+          <label for="PrintType">{"Print Type: "}</label>
+          <select name="PrintType" className="Search" default="All">
+            <option value=""></option>
+            <option value=""></option>
           </select>
         </section>
     );

@@ -3,9 +3,10 @@ import PrintTypeFilter from "./PrintTypeFilter";
 import BookTypeFilter from "./BookTypeFilter";
 
 class SearchFilter extends React.Component {
+
   render() {
     return (
-      <section>
+      <section className="SearchFilter">
         <form action="" className="searchInput">
           <label for="userInput">{'Search'}</label>
           <input type="text" id="userInput"/>
