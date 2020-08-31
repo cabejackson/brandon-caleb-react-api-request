@@ -1,6 +1,8 @@
 import React from 'react';
 import SearchFilter from './SearchFilter';
-import SearchTermFilter from './SearchTermFilter';
+import PrintTypeFilter from './PrintTypeFilter';
+import BookTypeFilter from './BookTypeFilter';
+
 
 class Search extends React.Component {
 
@@ -8,7 +10,8 @@ class Search extends React.Component {
         return (
             <section>
                 <SearchFilter />
-                <SearchTermFilter />
+                <PrintTypeFilter />
+                <BookTypeFilter />    
             </section>
         ) 
     }

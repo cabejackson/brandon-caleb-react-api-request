@@ -1,15 +1,26 @@
 import React from 'react';
-import SearchTermFilter from './SearchTermFilter';
+import SearchTermFilter from './PrintTypeFilter';
 
 class Book extends React.Component {
 
     render () {
-        let hi = "hi";
-        console.log(hi, 'TESTTT');
+        let Title = "title"
+        let Author = "name";
+        let Price = 0;
+        let Description = "words";
+
 
         return (
             <section>
-                <p>{hi}</p>
+                <h3 className="title">{Title}</h3>
+                <div className="book">
+                    <img src="" alt="" className="bookCover"/>
+                    <div className="bookInfo">
+                        <p>{Author}</p>
+                        <p>{Price}</p>
+                        <p>{Description}</p>
+                    </div>
+                </div>   
             </section>
     
 
